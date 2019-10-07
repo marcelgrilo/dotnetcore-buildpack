@@ -61,9 +61,11 @@ if [ -f ${BUILD_DIR}/Procfile ] && grep -q '^web:' ${BUILD_DIR}/Procfile ; then
 	echo "Be careful with custom Procfile" | indent
 else
 	echo "Add web process to Procfile" | indent
+	echo "${BUILD_DIR}/Procfile"
+	echo "\\${HOME}/heroku_output && ./${PROJECT_NAME}" | indent
+	dotnet --help
 	cat << EOT >> ${BUILD_DIR}/Procfile
-ls \$HOME/heroku_output
-dotnet --help
 web: cd \$HOME/heroku_output && ./${PROJECT_NAME}
 EOT
+
 fi
