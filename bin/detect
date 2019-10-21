@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
-
+echo "detecting..."
+echo "detecting..."
+echo "detecting..."
+echo "detecting..."
+echo "detecting..."
+echo "variable1=$1"
+echo "+++++++++++++"
 if [ -n "$(find $1 -maxdepth 50 -iname Startup.cs)" ]; then
   echo "ASP.NET Core" && exit 0
 elif [ -n "$(find $1 -maxdepth 50 -iname Program.cs)" ]; then
